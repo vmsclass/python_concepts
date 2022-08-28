@@ -1,0 +1,148 @@
+The break Statement
+
+With the break statement we can stop the loop before it has looped through all the items:
+
+Exit the loop when x is "banana":
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x) 
+  if x == "banana":
+    break
+
+Example
+
+Exit the loop when x is "banana", but this time the break comes before the print:
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+  print(x) 
+
+The continue Statement
+
+With the continue statement we can stop the current iteration of the loop, and continue with the next:
+
+Example
+
+Do not print banana:
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+  print(x) 
+
+Write a Python program that prints all the numbers from 0 to 6 except 3 and 6.
+
+Note : Use 'continue' statement.
+
+for x in range(6):
+    if (x == 3 or x==6):
+        continue
+    print(x,end=' ')
+print("\n")
+
+
+
+
+
+The pass Statement
+
+for loops cannot be empty, but if you for some reason have a for loop with no content, put in the pass statement to avoid getting an error.
+
+for x in [0, 1, 2]:
+  pass
+
+# having an empty for loop like this, would raise an error without the pass statement
+
+
+
+
+Else in For Loop
+
+The else keyword in a for loop specifies a block of code to be executed when the loop is finished:
+
+Print all numbers from 0 to 5, and print a message when the loop has ended:
+
+for x in range(6):
+  print(x)
+else:
+  print("Finally finished!")
+
+
+Note: The else block will NOT be executed if the loop is stopped by a break statement.
+
+
+for x in range(6):
+  if x == 3: break
+  print(x)
+else:
+  print("Finally finished!")
+
+#If the loop breaks, the else block is not executed.
+
+Nested Loops
+A nested loop is a loop inside a loop.
+
+The "inner loop" will be executed one time for each iteration of the "outer loop":
+
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+
+for x in adj:
+  for y in fruits:
+    print(x, y)
+
+
+
+Write a Python program to find those numbers which are divisible by 7 and multiple of 5, between 1500 and 2700 (both included).
+
+for x in range(1500, 2701):
+    if (x%7==0) and (x%5==0):
+        print(x)
+
+
+Write a Python program to count the number of even and odd numbers from a series of numbers.
+
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9) # Declaring the tuple
+count_odd = 0
+count_even = 0
+for x in numbers:
+        if not x % 2:
+    	     count_even+=1
+        else:
+    	     count_odd+=1
+print("Number of even numbers :",count_even)
+print("Number of odd numbers :",count_odd)
+
+Write a Python program to get the Fibonacci series between 0 to 50.
+
+Note : The Fibonacci Sequence is the series of numbers :
+0, 1, 1, 2, 3, 5, 8, 13, 21, ....
+Every next number is found by adding up the two numbers before it.
+
+x,y=0,1
+
+while y<50:
+    print(y)
+    x,y = y,x+y
+	
+
+
+Write a Python program which iterates the integers from 1 to 50. For multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+
+for fizzbuzz in range(51):
+    if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
+        print("fizzbuzz")
+        continue
+    elif fizzbuzz % 3 == 0:
+        print("fizz")
+        continue
+    elif fizzbuzz % 5 == 0:
+        print("buzz")
+        continue
+    print(fizzbuzz)
+	
+
